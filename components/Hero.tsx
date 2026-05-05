@@ -8,64 +8,84 @@ export default function Hero() {
   return (
     <section className="hero" id="top">
       <div className="container">
-        <div className="reveal">
-          <div className="hero-eyebrow">
-            <span className="eyebrow">
-              Unabhängige Beratung · Wien · Linz · Steyr
-            </span>
-          </div>
-          <h1 className="hero-headline">
-            <span className="row">Finanzen, die</span>
-            <span className="row">
-              <em>zu dir</em>
-              <span className="photo-inline">
-                <Image
-                  src="/gabriel.png"
-                  alt=""
-                  fill
-                  sizes="(max-width: 760px) 90px, (max-width: 1200px) 18vw, 260px"
-                  priority
-                />
+        <div className="hero-grid">
+          <div className="hero-content reveal">
+            <div className="hero-eyebrow">
+              <span className="eyebrow">
+                Unabhängige Beratung · Wien · Linz · Steyr
               </span>
-              passen.
-            </span>
-            <span className="row">Nicht zur Provision.</span>
-          </h1>
-        </div>
+            </div>
+            <h1 className="hero-headline">
+              <span className="row">Finanzen,</span>
+              <span className="row">
+                die <em>zu dir</em>
+              </span>
+              <span className="row">passen.</span>
+              <span className="row sub">Nicht zur Provision.</span>
+            </h1>
 
-        <div className="hero-bottom reveal" style={delay(120)}>
-          <p className="lead hero-lead">
-            Hi, ich bin Gabriel. Ich helfe dir, Klarheit über deine Finanzen,
-            Versicherungen und Verträge zu bekommen – mit ehrlichen
-            Marktvergleichen, verständlichen Erklärungen und einer Betreuung,
-            die nicht nach dem Abschluss aufhört.
-          </p>
-          <div className="hero-actions">
-            <a href="#kontakt" className="btn btn-primary">
-              Erstgespräch <span className="arrow">→</span>
-            </a>
-            <a href="#leistungen" className="btn btn-ghost">
-              Was ich mache
-            </a>
+            <p className="lead hero-lead">
+              Hi, ich bin Gabriel. Ich helfe dir, Klarheit über deine Finanzen,
+              Versicherungen und Verträge zu bekommen – mit ehrlichen
+              Marktvergleichen und einer Betreuung, die nicht nach dem Abschluss
+              aufhört.
+            </p>
+
+            <div className="hero-actions">
+              <a href="#kontakt" className="btn btn-primary">
+                Erstgespräch <span className="arrow">→</span>
+              </a>
+              <a href="#leistungen" className="btn btn-ghost">
+                Was ich mache
+              </a>
+            </div>
+
+            <ul className="hero-trust">
+              <li>
+                <span className="dot" /> Staatlich geprüft
+              </li>
+              <li>
+                <span className="dot" /> Ungebundener Marktvergleich
+              </li>
+              <li>
+                <span className="dot" /> Erstgespräch kostenlos
+              </li>
+            </ul>
+          </div>
+
+          <div className="hero-photo reveal" style={delay(120)}>
+            <div className="photo-frame">
+              <Image
+                src="/gabriel-portrait.jpg"
+                alt="Gabriel Großalber"
+                fill
+                sizes="(max-width: 960px) 70vw, 480px"
+                priority
+              />
+            </div>
+            <div className="photo-tag">
+              <span className="k">Berater</span>
+              <span className="v">Gabriel Großalber</span>
+            </div>
           </div>
         </div>
 
         <div className="hero-strip reveal" style={delay(180)}>
           <div className="strip-item">
-            <div className="k">Tätig seit</div>
-            <div className="v">2021</div>
+            <div className="v">4+</div>
+            <div className="k">Jahre Erfahrung</div>
           </div>
           <div className="strip-item">
-            <div className="k">Standorte</div>
-            <div className="v">Wien · Linz · Steyr</div>
+            <div className="v">3</div>
+            <div className="k">Standorte in Österreich</div>
           </div>
           <div className="strip-item">
-            <div className="k">Markt</div>
-            <div className="v">Ungebunden</div>
+            <div className="v">100%</div>
+            <div className="k">Marktvergleich, ungebunden</div>
           </div>
           <div className="strip-item">
-            <div className="k">Erstgespräch</div>
-            <div className="v">Kostenlos</div>
+            <div className="v">0 €</div>
+            <div className="k">Erstgespräch &amp; Polizzen­check</div>
           </div>
         </div>
       </div>

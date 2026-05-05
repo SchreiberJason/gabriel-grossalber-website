@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Manifest from "@/components/Manifest";
+import Trust from "@/components/Trust";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Beliefs from "@/components/Beliefs";
@@ -20,6 +21,7 @@ export default function Page() {
       <main>
         <Hero />
         <Manifest />
+        <Trust />
         <About />
         <Services />
         <Beliefs />

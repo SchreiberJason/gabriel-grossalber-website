@@ -49,7 +49,7 @@ export default function About() {
         <div className="about-grid">
           <div className="about-photo reveal">
             <Image
-              src="/gabriel.png"
+              src="/gabriel-portrait-2.jpg"
               alt="Gabriel Großalber"
               width={1400}
               height={2100}
