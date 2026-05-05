@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { CSSProperties } from "react";
+import { asset } from "@/lib/asset";
 
 const delay = (ms: number) =>
   ({ "--reveal-delay": `${ms}ms` } as CSSProperties);
@@ -28,7 +29,7 @@ export default function Trust() {
           <div className="trust-card reveal">
             <div className="seal">
               <Image
-                src="/siegel-vermoegensberatung.png"
+                src={asset("/siegel-vermoegensberatung.png")}
                 alt="Siegel Gewerbliche Vermögensberatung – staatlich geprüft"
                 width={220}
                 height={220}
@@ -48,7 +49,7 @@ export default function Trust() {
           <div className="trust-card reveal" style={delay(100)}>
             <div className="seal">
               <Image
-                src="/siegel-versicherungsagent.png"
+                src={asset("/siegel-versicherungsagent.png")}
                 alt="Siegel Versicherungsagent – staatlich geprüft"
                 width={220}
                 height={220}

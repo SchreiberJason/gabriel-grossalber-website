@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { CSSProperties } from "react";
+import { asset } from "@/lib/asset";
 
 const delay = (ms: number) =>
   ({ "--reveal-delay": `${ms}ms` } as CSSProperties);
@@ -56,7 +57,7 @@ export default function Hero() {
           <div className="hero-photo reveal" style={delay(120)}>
             <div className="photo-frame">
               <Image
-                src="/gabriel-portrait.jpg"
+                src={asset("/gabriel-portrait.jpg")}
                 alt="Gabriel Großalber"
                 fill
                 sizes="(max-width: 960px) 70vw, 480px"

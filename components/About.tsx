@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { CSSProperties } from "react";
+import { asset } from "@/lib/asset";
 
 const delay = (ms: number) =>
   ({ "--reveal-delay": `${ms}ms` } as CSSProperties);
@@ -49,7 +50,7 @@ export default function About() {
         <div className="about-grid">
           <div className="about-photo reveal">
             <Image
-              src="/gabriel-portrait-2.jpg"
+              src={asset("/gabriel-portrait-2.jpg")}
               alt="Gabriel Großalber"
               width={1400}
               height={2100}
