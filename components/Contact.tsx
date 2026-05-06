@@ -3,22 +3,83 @@
 import Link from "next/link";
 import { useState, type FormEvent } from "react";
 
+// Web3Forms Access Key — kostenfreier Schlüssel auf https://web3forms.com
+// erstellen und hier eintragen. Solange der Platzhalter steht, simuliert das
+// Formular eine erfolgreiche Übermittlung, ohne wirklich zu senden.
+const WEB3FORMS_ACCESS_KEY = "REPLACE_WITH_YOUR_ACCESS_KEY";
+
+const TOPICS = [
+  "Vermögensaufbau / Sparplan",
+  "Vorsorge / Pension",
+  "Versicherungen prüfen",
+  "Finanzierung / Wohnbau",
+  "Betriebliche Altersvorsorge",
+  "Energie / Haushalt",
+  "Firmenkund:innen",
+  "Sonstiges",
+];
+
+const TIMES = ["Vormittag", "Nachmittag", "Abend", "Wochenende", "Egal"];
+
+const BENEFITS = [
+  "Marktvergleich – ohne Bindung an einen Anbieter",
+  "Schriftliche Zusammenfassung nach dem Gespräch",
+  "Keine Verkaufsverpflichtung, auch wenn nichts passt",
+  "Antwort innerhalb von 24 Stunden",
+];
+
 export default function Contact() {
   const [status, setStatus] = useState("");
   const [submitting, setSubmitting] = useState(false);
+  const [topics, setTopics] = useState<string[]>([]);
+  const [time, setTime] = useState("");
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  function toggleTopic(t: string) {
+    setTopics((prev) =>
+      prev.includes(t) ? prev.filter((x) => x !== t) : [...prev, t]
+    );
+  }
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const form = e.currentTarget;
     setSubmitting(true);
     setStatus("Wird gesendet …");
-    const form = e.currentTarget;
-    setTimeout(() => {
-      setSubmitting(false);
+
+    const formData = new FormData(form);
+    formData.append("themen", topics.join(", "));
+    formData.append("wunschzeit", time);
+
+    const isConfigured =
+      WEB3FORMS_ACCESS_KEY && WEB3FORMS_ACCESS_KEY.length > 20;
+
+    try {
+      if (isConfigured) {
+        formData.append("access_key", WEB3FORMS_ACCESS_KEY);
+        formData.append("subject", "Neue Anfrage über grossalber.at");
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData,
+        });
+        const data = await res.json();
+        if (!data.success) throw new Error("submit-failed");
+      } else {
+        await new Promise((r) => setTimeout(r, 700));
+      }
+
       setStatus(
         "Vielen Dank – deine Anfrage ist da. Antwort innerhalb von 24 Stunden."
       );
       form.reset();
-    }, 900);
+      setTopics([]);
+      setTime("");
+    } catch {
+      setStatus(
+        "Hat leider nicht geklappt. Bitte direkt per E-Mail an office@grossalber.at."
+      );
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -44,6 +105,32 @@ export default function Contact() {
               hab das Gefühl, ich zahle zu viel für …". Den Rest finden wir
               gemeinsam heraus.
             </p>
+
+            <div className="benefits">
+              <span className="eyebrow">Was du bekommst</span>
+              <ul>
+                {BENEFITS.map((b) => (
+                  <li key={b}>
+                    <span className="check" aria-hidden="true">
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    </span>
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
             <div className="contact-direct">
               <a href="tel:+436802138014">
                 <span className="ico">
@@ -76,62 +163,82 @@ export default function Contact() {
                 </span>
                 office@grossalber.at
               </a>
-              <a
-                href="https://www.openstreetmap.org/?mlat=48.18636&mlon=16.35990"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="ico">
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
-                </span>
-                Siebenbrunnengasse 17/5, 1050 Wien
-              </a>
             </div>
           </div>
 
           <form className="form reveal" onSubmit={handleSubmit}>
             <div className="field">
               <label htmlFor="v2-name">Name</label>
-              <input id="v2-name" name="name" type="text" required autoComplete="name" />
+              <input
+                id="v2-name"
+                name="name"
+                type="text"
+                required
+                autoComplete="name"
+              />
             </div>
             <div className="field">
               <label htmlFor="v2-mail">E-Mail</label>
-              <input id="v2-mail" name="email" type="email" required autoComplete="email" />
-            </div>
-            <div className="field">
-              <label htmlFor="v2-phone">Telefon</label>
-              <input id="v2-phone" name="phone" type="tel" autoComplete="tel" />
-            </div>
-            <div className="field">
-              <label htmlFor="v2-topic">Thema</label>
-              <select id="v2-topic" name="topic" defaultValue="">
-                <option value="" disabled>
-                  Bitte auswählen
-                </option>
-                <option>Vermögensaufbau / Sparplan</option>
-                <option>Vorsorge / Pension</option>
-                <option>Versicherungen prüfen</option>
-                <option>Finanzierung / Wohnbau</option>
-                <option>Betriebliche Altersvorsorge (BAV)</option>
-                <option>Energie- / Haushaltsoptimierung</option>
-                <option>Firmenkund:innen</option>
-                <option>Sonstiges</option>
-              </select>
+              <input
+                id="v2-mail"
+                name="email"
+                type="email"
+                required
+                autoComplete="email"
+              />
             </div>
             <div className="field field-full">
-              <label htmlFor="v2-date">Wunschtermin (optional)</label>
-              <input id="v2-date" name="date" type="date" />
+              <label htmlFor="v2-phone">Telefon (optional)</label>
+              <input
+                id="v2-phone"
+                name="phone"
+                type="tel"
+                autoComplete="tel"
+              />
             </div>
+
+            <div className="field field-full chip-field">
+              <span className="chip-label">Worum geht’s? Mehrfachauswahl möglich.</span>
+              <div className="chip-row" role="group" aria-label="Themen">
+                {TOPICS.map((t) => {
+                  const active = topics.includes(t);
+                  return (
+                    <button
+                      key={t}
+                      type="button"
+                      className={"chip" + (active ? " is-active" : "")}
+                      aria-pressed={active}
+                      onClick={() => toggleTopic(t)}
+                    >
+                      {t}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="field field-full chip-field">
+              <span className="chip-label">Wann erreiche ich dich am besten?</span>
+              <div className="chip-row" role="radiogroup" aria-label="Wunschzeit">
+                {TIMES.map((t) => {
+                  const active = time === t;
+                  return (
+                    <button
+                      key={t}
+                      type="button"
+                      className={"chip" + (active ? " is-active" : "")}
+                      aria-pressed={active}
+                      role="radio"
+                      aria-checked={active}
+                      onClick={() => setTime(active ? "" : t)}
+                    >
+                      {t}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
             <div className="field field-full">
               <label htmlFor="v2-msg">Nachricht</label>
               <textarea
@@ -141,6 +248,7 @@ export default function Contact() {
                 placeholder="Worum geht’s konkret?"
               />
             </div>
+
             <label className="checkbox">
               <input type="checkbox" name="consent" required />
               <span>
@@ -152,6 +260,7 @@ export default function Contact() {
                 Kontaktaufnahme zu.
               </span>
             </label>
+
             <div className="form-actions">
               <span
                 className={
@@ -168,6 +277,18 @@ export default function Contact() {
                 Anfrage senden <span className="arrow">→</span>
               </button>
             </div>
+
+            <ul className="form-trust">
+              <li>
+                <span className="dot" /> Antwort innerhalb von 24 h
+              </li>
+              <li>
+                <span className="dot" /> Direkt von Gabriel, kein Bot
+              </li>
+              <li>
+                <span className="dot" /> Du verpflichtest dich zu nichts
+              </li>
+            </ul>
           </form>
         </div>
       </div>
