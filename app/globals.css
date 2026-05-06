@@ -1006,7 +1006,14 @@ html[data-theme="dark"] .location-map iframe {
   font-size: 13px; color: var(--ink-2); line-height: 1.5;
 }
 .form .checkbox input { width: auto; margin-top: 3px; accent-color: var(--accent); }
-.form .checkbox a { color: var(--ink); }
+.form .checkbox a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--accent) 35%, transparent);
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.15s;
+}
+.form .checkbox a:hover { text-decoration-color: var(--accent); }
 .form-actions {
   grid-column: 1 / -1;
   display: flex; justify-content: space-between; align-items: center;

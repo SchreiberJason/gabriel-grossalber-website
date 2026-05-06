@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, type FormEvent } from "react";
 
 export default function Contact() {
@@ -143,7 +144,10 @@ export default function Contact() {
             <label className="checkbox">
               <input type="checkbox" name="consent" required />
               <span>
-                Ich habe die <a href="#datenschutz">Datenschutzhinweise</a>{" "}
+                Ich habe die{" "}
+                <Link href="/impressum#datenschutz" target="_blank">
+                  Datenschutzhinweise
+                </Link>{" "}
                 gelesen und stimme der Verarbeitung meiner Daten zur
                 Kontaktaufnahme zu.
               </span>
