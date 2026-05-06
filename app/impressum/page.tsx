@@ -33,24 +33,24 @@ export default function ImpressumPage() {
           <section className="legal-section">
             <h2>Medieninhaber &amp; Herausgeber</h2>
             <p>
-              Jason Schreiber
+              Gabriel Großalber
               <br />
-              Franz-Josefs-Kai 53/15
+              Siebenbrunnengasse 17/5
               <br />
-              1010 Wien, Österreich
+              1050 Wien, Österreich
             </p>
             <dl className="legal-defs">
               <div>
                 <dt>Telefon</dt>
                 <dd>
-                  <a href="tel:+436766433346">+43 676 6433346</a>
+                  <a href="tel:+436802138014">+43 680 213 80 14</a>
                 </dd>
               </div>
               <div>
                 <dt>E-Mail</dt>
                 <dd>
-                  <a href="mailto:office@jasonschreiber.at">
-                    office@jasonschreiber.at
+                  <a href="mailto:office@grossalber.at">
+                    office@grossalber.at
                   </a>
                 </dd>
               </div>
@@ -58,11 +58,11 @@ export default function ImpressumPage() {
                 <dt>Web</dt>
                 <dd>
                   <a
-                    href="https://www.jasonschreiber.at"
+                    href="https://www.grossalber.at"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    www.jasonschreiber.at
+                    www.grossalber.at
                   </a>
                 </dd>
               </div>
@@ -85,7 +85,7 @@ export default function ImpressumPage() {
                   Unfallversicherungen.
                 </p>
                 <p>
-                  GISA-Zahl: <strong>38611308</strong>
+                  GISA-Zahl: <strong>37364366</strong>
                 </p>
               </li>
               <li>
@@ -95,7 +95,7 @@ export default function ImpressumPage() {
                   Versicherungsagent.
                 </p>
                 <p>
-                  GISA-Zahl: <strong>37109165</strong>
+                  GISA-Zahl: <strong>35611844</strong>
                 </p>
               </li>
             </ol>
@@ -194,8 +194,8 @@ export default function ImpressumPage() {
             <h2>Haftungsausschluss &amp; Urheberrecht</h2>
             <h3>Hinweis zur Unabhängigkeit der Webseite</h3>
             <p>
-              Diese Webseite ist ein eigenständiger Internetauftritt von Jason
-              Schreiber und keine offizielle Webseite der OVB
+              Diese Webseite ist ein eigenständiger Internetauftritt von Gabriel
+              Großalber und keine offizielle Webseite der OVB
               Allfinanzvermittlungs GmbH. Für den Inhalt, die Gestaltung und die
               datenschutzrechtliche Verantwortlichkeit dieser Webseite ist
               ausschließlich der Medieninhaber verantwortlich. Die Nutzung von
@@ -227,7 +227,7 @@ export default function ImpressumPage() {
             <h2>Datenschutzerklärung</h2>
             <h3>Verantwortlicher</h3>
             <p>
-              Jason Schreiber (Kontaktdaten siehe oben). In gemeinsamer
+              Gabriel Großalber (Kontaktdaten siehe oben). In gemeinsamer
               Verantwortlichkeit mit der OVB Allfinanzvermittlungs GmbH für die
               Verarbeitung von Kundendaten.
             </p>
