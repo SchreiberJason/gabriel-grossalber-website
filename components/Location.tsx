@@ -1,5 +1,6 @@
-const ADDRESS_QUERY = "Siebenbrunnengasse+17%2F5%2C+1050+Wien%2C+Austria";
-const MAP_EMBED = `https://maps.google.com/maps?q=${ADDRESS_QUERY}&t=&z=16&ie=UTF8&iwloc=&output=embed`;
+const ADDRESS_QUERY =
+  "OVB+B%C3%BCro+Siebenbrunnengasse+17%2FTop+5%2C+1050+Wien%2C+Austria";
+const MAP_EMBED = `https://maps.google.com/maps?q=${ADDRESS_QUERY}&t=&z=17&ie=UTF8&iwloc=B&output=embed`;
 const MAP_LINK = `https://www.google.com/maps/search/?api=1&query=${ADDRESS_QUERY}`;
 
 export default function Location() {
@@ -87,31 +88,8 @@ export default function Location() {
               src={MAP_EMBED}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Karte – Siebenbrunnengasse 17, 1050 Wien"
+              title="OVB Büro – Siebenbrunnengasse 17/Top 5, 1050 Wien"
             />
-            <a
-              className="map-pin"
-              href={MAP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="In Google Maps öffnen"
-            >
-              <span className="pin-marker">
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <path d="M12 2a8 8 0 0 0-8 8c0 5.4 7.05 11.5 7.35 11.76a1 1 0 0 0 1.3 0C12.95 21.5 20 15.4 20 10a8 8 0 0 0-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
-                </svg>
-              </span>
-              <span className="pin-text">
-                <span className="pin-title">Siebenbrunnengasse 17/5</span>
-                <span className="pin-sub">1050 Wien · Route ansehen →</span>
-              </span>
-            </a>
           </div>
         </div>
       </div>
