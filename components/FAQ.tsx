@@ -1,7 +1,7 @@
 const FAQ_ITEMS = [
   {
     q: "Was kostet das alles?",
-    a: "Das Erstgespräch ist immer kostenlos und unverbindlich. Bei einer Vermittlung werde ich von Versicherung oder Bank vergütet – du zahlst nichts zusätzlich. Bei reinen Beratungsleistungen ohne Vermittlung sprechen wir vorher transparent über das Honorar.",
+    a: "Die Beratung kostet dich nichts – nicht beim ersten Gespräch und auch nicht bei späteren Servicegesprächen. Bei einer Vermittlung werde ich von Versicherung oder Bank vergütet, du zahlst keinen Cent zusätzlich. Nur bei reinen Beratungsleistungen ohne Vermittlung sprechen wir vorher transparent über ein Honorar.",
   },
   {
     q: "Bist du an bestimmte Anbieter gebunden?",

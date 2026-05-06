@@ -6,8 +6,8 @@ export default function CTA() {
           Klarheit, die sich <em>anfühlt wie ein Plan.</em>
         </h2>
         <p>
-          Erstgespräch kostenlos und unverbindlich. Persönlich in Wien, Linz
-          oder Steyr – oder online, wenn’s schnell gehen muss.
+          Für dich kostenfrei und unverbindlich. Persönlich in Wien, Linz oder
+          Steyr – oder online, wenn’s schnell gehen muss.
         </p>
         <div className="cta-actions">
           <a href="#kontakt" className="btn btn-primary">

@@ -49,7 +49,7 @@ export default function Hero() {
                 <span className="dot" /> Ungebundener Marktvergleich
               </li>
               <li>
-                <span className="dot" /> Erstgespräch kostenlos
+                <span className="dot" /> Für dich kostenfrei
               </li>
             </ul>
           </div>
@@ -86,7 +86,7 @@ export default function Hero() {
           </div>
           <div className="strip-item">
             <div className="v">0 €</div>
-            <div className="k">Erstgespräch &amp; Polizzen­check</div>
+            <div className="k">Beratung, Vermittlung, Service</div>
           </div>
         </div>
       </div>
