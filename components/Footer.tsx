@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="site-footer">
@@ -35,7 +37,10 @@ export default function Footer() {
         </div>
         <div className="footer-bottom">
           <span>© 2026 Gabriel Großalber · Alle Rechte vorbehalten</span>
-          <span>Impressum · Datenschutz · Erstinformation</span>
+          <span className="footer-legal">
+            <Link href="/impressum">Impressum &amp; Offenlegung</Link>
+            <Link href="/impressum#datenschutz">Datenschutz</Link>
+          </span>
         </div>
       </div>
     </footer>
