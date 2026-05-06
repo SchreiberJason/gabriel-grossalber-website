@@ -424,16 +424,22 @@ section { padding: clamp(80px, 11vw, 160px) 0; position: relative; }
   .trust-meta { grid-template-columns: 1fr; }
 }
 .trust-meta .meta-item {
-  padding: 24px 28px 24px 0;
+  padding: 28px clamp(28px, 4vw, 56px);
   border-right: 1px solid var(--line);
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
-.trust-meta .meta-item:last-child { border-right: 0; padding-right: 0; }
+.trust-meta .meta-item:first-child { padding-left: 0; }
+.trust-meta .meta-item:last-child { padding-right: 0; border-right: 0; }
 @media (max-width: 760px) {
-  .trust-meta .meta-item { border-right: 0; border-bottom: 1px solid var(--line); padding: 20px 0; }
-  .trust-meta .meta-item:last-child { border-bottom: 0; }
+  .trust-meta .meta-item {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 20px 0;
+  }
+  .trust-meta .meta-item:last-child { border-bottom: 0; padding-right: 0; }
+  .trust-meta .meta-item:first-child { padding-left: 0; padding-top: 24px; }
 }
 .trust-meta .k {
   font-family: var(--mono);
@@ -451,6 +457,13 @@ section { padding: clamp(80px, 11vw, 160px) 0; position: relative; }
 }
 
 /* About */
+.about-head {
+  margin-bottom: clamp(48px, 6vw, 80px);
+  max-width: 24ch;
+}
+.about-head .label { display: block; margin-bottom: 18px; }
+.about-head h2 { font-size: clamp(40px, 5.5vw, 72px); }
+
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
@@ -476,6 +489,18 @@ section { padding: clamp(80px, 11vw, 160px) 0; position: relative; }
 .about-text h2 { margin-bottom: 28px; }
 .about-text p { color: var(--ink-2); font-size: 17px; }
 .about-text p + p { margin-top: 18px; }
+.about-text .about-lead {
+  font-family: var(--serif);
+  font-size: clamp(20px, 2vw, 26px);
+  line-height: 1.4;
+  font-weight: 300;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--line);
+  max-width: 36ch;
+}
 .about-text .highlight {
   font-family: var(--serif);
   font-size: clamp(22px, 2.4vw, 30px);

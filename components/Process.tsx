@@ -7,7 +7,7 @@ const STEPS = [
   {
     num: "02",
     title: "Ich analysiere und vergleiche",
-    desc: "Du gibst mir Einblick in deine Verträge. Ich vergleiche unabhängig und finde Lücken, Doppelungen und Spielraum.",
+    desc: "Du gibst mir Einblick in deine Verträge. Ich vergleiche ungebunden und finde Lücken, Doppelungen und Spielraum.",
   },
   {
     num: "03",

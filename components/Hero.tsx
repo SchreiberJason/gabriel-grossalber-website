@@ -13,7 +13,7 @@ export default function Hero() {
           <div className="hero-content reveal">
             <div className="hero-eyebrow">
               <span className="eyebrow">
-                Unabhängige Beratung · Wien · Linz · Steyr
+                Ungebundene Beratung · Wien · Linz · Steyr
               </span>
             </div>
             <h1 className="hero-headline">

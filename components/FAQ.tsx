@@ -9,7 +9,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Was ist der Unterschied zu meiner Bank?",
-    a: "Eine Bank verkauft die eigenen Produkte. Ich vergleiche unabhängig zwischen Banken, Versicherungen und Fondsgesellschaften – und wähle daraus die passende Lösung. Häufig deutlich günstiger oder besser strukturiert.",
+    a: "Eine Bank verkauft die eigenen Produkte. Ich vergleiche ungebunden zwischen Banken, Versicherungen und Fondsgesellschaften – und wähle daraus die passende Lösung. Häufig deutlich günstiger oder besser strukturiert.",
   },
   {
     q: "Bist du auch am Wochenende erreichbar?",
