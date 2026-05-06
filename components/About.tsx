@@ -32,12 +32,19 @@ export default function About() {
   return (
     <section id="ueber">
       <div className="container">
-        <div className="about-head reveal">
-          <span className="eyebrow label">Über mich</span>
-          <h2>
-            Wer bin ich,{" "}
-            <em className="italic accent-text">warum mache ich das?</em>
-          </h2>
+        <div className="section-head-big reveal">
+          <div>
+            <span className="eyebrow label">Über mich</span>
+            <h2>
+              Wer bin ich,{" "}
+              <em className="italic accent-text">warum mache ich das?</em>
+            </h2>
+          </div>
+          <p className="desc">
+            Ich glaube, finanzielle Klarheit ist keine Frage des Einkommens,
+            sondern der Information. Die meisten Menschen wissen nicht, was sie
+            haben – und zahlen dafür.
+          </p>
         </div>
 
         <div className="about-grid">
@@ -51,11 +58,6 @@ export default function About() {
             />
           </div>
           <div className="about-text reveal" style={delay(120)}>
-            <p className="about-lead">
-              Ich glaube, finanzielle Klarheit ist keine Frage des Einkommens,
-              sondern der Information. Die meisten Menschen wissen nicht, was
-              sie haben – und zahlen dafür.
-            </p>
             <p>
               Mein Weg in die Branche startete während der HTL. Schon vor der
               Matura habe ich die Meisterprüfung als Versicherungsagent
