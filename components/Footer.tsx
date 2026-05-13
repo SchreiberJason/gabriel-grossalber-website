@@ -18,11 +18,19 @@ export default function Footer() {
           <div>
             <h4>Bereiche</h4>
             <ul>
-              <li><a href="#leistungen">Vermögensaufbau</a></li>
-              <li><a href="#leistungen">Vorsorge & Pension</a></li>
-              <li><a href="#leistungen">Versicherungen</a></li>
-              <li><a href="#leistungen">Finanzierungen</a></li>
-              <li><a href="#leistungen">Firmenkund:innen</a></li>
+              <li><Link href="/#leistungen">Vermögensaufbau</Link></li>
+              <li><Link href="/#leistungen">Vorsorge & Pension</Link></li>
+              <li><Link href="/#leistungen">Versicherungen</Link></li>
+              <li><Link href="/#leistungen">Finanzierungen</Link></li>
+              <li><Link href="/#leistungen">Firmenkund:innen</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Standorte</h4>
+            <ul>
+              <li><Link href="/wien/">Finanzberatung Wien</Link></li>
+              <li><Link href="/linz/">Finanzberatung Linz</Link></li>
+              <li><Link href="/steyr/">Finanzberatung Steyr</Link></li>
             </ul>
           </div>
           <div>

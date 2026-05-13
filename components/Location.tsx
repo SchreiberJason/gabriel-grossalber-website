@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const ADDRESS_QUERY =
   "OVB+B%C3%BCro+Siebenbrunnengasse+17%2FTop+5%2C+1050+Wien%2C+Austria";
 const MAP_EMBED = `https://maps.google.com/maps?q=${ADDRESS_QUERY}&t=&z=17&ie=UTF8&iwloc=B&output=embed`;
@@ -54,7 +56,18 @@ export default function Location() {
               </li>
               <li>
                 <span className="k">Oberösterreich</span>
-                <span className="v">Linz · Steyr – Termin nach Vereinbarung</span>
+                <span className="v">
+                  <Link href="/linz/">Linz</Link> ·{" "}
+                  <Link href="/steyr/">Steyr</Link> – Termin nach Vereinbarung
+                </span>
+              </li>
+              <li>
+                <span className="k">Standortseiten</span>
+                <span className="v">
+                  <Link href="/wien/">Wien</Link> ·{" "}
+                  <Link href="/linz/">Linz</Link> ·{" "}
+                  <Link href="/steyr/">Steyr</Link>
+                </span>
               </li>
             </ul>
 
