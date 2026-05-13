@@ -976,10 +976,29 @@ html[data-theme="dark"] .location-map iframe {
 .form textarea { resize: vertical; min-height: 110px; }
 .form .checkbox {
   grid-column: 1 / -1;
-  display: flex; gap: 12px; align-items: flex-start;
-  font-size: 13px; color: var(--ink-2); line-height: 1.5;
+  display: flex; gap: 14px; align-items: flex-start;
+  font-size: 14px; color: var(--ink-2); line-height: 1.5;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--accent) 4%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 12%, transparent);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  min-height: 56px;
 }
-.form .checkbox input { width: auto; margin-top: 3px; accent-color: var(--accent); }
+.form .checkbox:hover { background: color-mix(in srgb, var(--accent) 7%, transparent); }
+.form .checkbox input {
+  width: 24px; height: 24px;
+  min-width: 24px;
+  margin-top: 1px;
+  accent-color: var(--accent);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+@media (max-width: 760px) {
+  .form .checkbox { font-size: 15px; padding: 14px; gap: 16px; }
+  .form .checkbox input { width: 28px; height: 28px; min-width: 28px; }
+}
 .form .checkbox a {
   color: var(--accent);
   text-decoration: underline;

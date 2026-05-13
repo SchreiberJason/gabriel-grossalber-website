@@ -56,7 +56,7 @@ export default function Contact() {
     try {
       if (isConfigured) {
         formData.append("access_key", WEB3FORMS_ACCESS_KEY);
-        formData.append("subject", "Neue Anfrage über grossalber.at");
+        formData.append("subject", "Neue Anfrage über gabriel-grossalber.at");
         const res = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
           body: formData,
@@ -75,7 +75,7 @@ export default function Contact() {
       setTime("");
     } catch {
       setStatus(
-        "Hat leider nicht geklappt. Bitte direkt per E-Mail an office@grossalber.at."
+        "Hat leider nicht geklappt. Bitte direkt per E-Mail an office@gabriel-grossalber.at."
       );
     } finally {
       setSubmitting(false);
@@ -147,7 +147,7 @@ export default function Contact() {
                 </span>
                 +43 680 213 80 14
               </a>
-              <a href="mailto:office@grossalber.at">
+              <a href="mailto:office@gabriel-grossalber.at">
                 <span className="ico">
                   <svg
                     width="14"
@@ -161,7 +161,7 @@ export default function Contact() {
                     <polyline points="22,6 12,13 2,6" />
                   </svg>
                 </span>
-                office@grossalber.at
+                office@gabriel-grossalber.at
               </a>
             </div>
           </div>

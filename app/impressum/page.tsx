@@ -49,8 +49,8 @@ export default function ImpressumPage() {
               <div>
                 <dt>E-Mail</dt>
                 <dd>
-                  <a href="mailto:office@grossalber.at">
-                    office@grossalber.at
+                  <a href="mailto:office@gabriel-grossalber.at">
+                    office@gabriel-grossalber.at
                   </a>
                 </dd>
               </div>
@@ -58,11 +58,11 @@ export default function ImpressumPage() {
                 <dt>Web</dt>
                 <dd>
                   <a
-                    href="https://www.grossalber.at"
+                    href="https://gabriel-grossalber.at"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    www.grossalber.at
+                    www.gabriel-grossalber.at
                   </a>
                 </dd>
               </div>
@@ -267,6 +267,31 @@ export default function ImpressumPage() {
               Anfrage und für den Fall von Anschlussfragen bei mir gespeichert.
               Diese Daten gebe ich nicht ohne Ihre Einwilligung weiter, es sei
               denn, dies ist zur Vertragserfüllung mit der OVB notwendig.
+            </p>
+            <p>
+              <strong>Web3Forms (Formular-Übermittlung):</strong> Für die
+              technische Übermittlung des Kontaktformulars setze ich den
+              Dienst <em>Web3Forms</em> der Catty Studios FZ-LLC ein. Bei
+              Absendung des Formulars werden Ihre eingegebenen Daten
+              (insbesondere Name, E-Mail-Adresse, Telefonnummer sofern
+              angegeben, ausgewählte Themen und Ihre Nachricht) sowie technische
+              Verbindungsdaten an die Server von Web3Forms übertragen, dort
+              verarbeitet und mir per E-Mail zugestellt. Rechtsgrundlage ist
+              Art. 6 Abs. 1 lit. a DSGVO (Einwilligung, die Sie durch das
+              Anhaken der Checkbox erteilen) sowie Art. 6 Abs. 1 lit. b und
+              lit. f DSGVO (vorvertragliche Maßnahmen / berechtigtes Interesse
+              an der Anfragebearbeitung). Web3Forms speichert die Anfragen
+              ausschließlich zur Zustellung und löscht sie nach kurzer Zeit;
+              eine Weiterverwendung zu eigenen Zwecken findet laut Anbieter
+              nicht statt. Weitere Informationen finden Sie unter{" "}
+              <a
+                href="https://web3forms.com/privacy-policy"
+                target="_blank"
+                rel="noreferrer"
+              >
+                web3forms.com/privacy-policy
+              </a>
+              .
             </p>
             <p>
               <strong>Cookies:</strong> Diese Webseite verwendet Cookies. Sie

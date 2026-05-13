@@ -17,12 +17,11 @@ export default function Hero() {
               </span>
             </div>
             <h1 className="hero-headline">
-              <span className="row">Finanzen,</span>
+              <span className="row">Klarheit</span>
               <span className="row">
-                die <em>zu dir</em>
+                über <em>dein Geld.</em>
               </span>
-              <span className="row">passen.</span>
-              <span className="row sub">Nicht zur Provision.</span>
+              <span className="row sub">Ohne Provisionsdruck.</span>
             </h1>
 
             <p className="lead hero-lead">
@@ -73,7 +72,7 @@ export default function Hero() {
 
         <div className="hero-strip reveal" style={delay(180)}>
           <div className="strip-item">
-            <div className="v">4+</div>
+            <div className="v">3+</div>
             <div className="k">Jahre Erfahrung</div>
           </div>
           <div className="strip-item">

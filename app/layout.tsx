@@ -25,7 +25,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gabriel Großalber — Finanzen, die zu dir passen.",
+  title: "Gabriel Großalber — Klarheit über dein Geld. Ohne Provisionsdruck.",
   description:
     "Ungebundene Beratung zu Vermögensaufbau, Vorsorge, Versicherungen und Finanzierungen. Persönlich, transparent, langfristig. Wien · Linz · Steyr.",
 };

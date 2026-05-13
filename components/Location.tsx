@@ -9,16 +9,17 @@ export default function Location() {
       <div className="container">
         <div className="section-head-big reveal">
           <div>
-            <span className="eyebrow label">Standort Wien</span>
+            <span className="eyebrow label">Standorte Wien &amp; Oberösterreich</span>
             <h2>
-              Persönlich vor Ort,{" "}
-              <em className="italic accent-text">im 5. Bezirk.</em>
+              Persönlich vor Ort{" "}
+              <em className="italic accent-text">– in Wien und OÖ.</em>
             </h2>
           </div>
           <p className="desc">
-            Das Wiener Büro liegt in der Siebenbrunnengasse, fußläufig zum
-            Margaretengürtel. Termine bitte vorher vereinbaren – Beratungen
-            finden ungestört statt.
+            Das Wiener Büro liegt in der Siebenbrunnengasse im 5. Bezirk,
+            fußläufig zum Margaretengürtel. In Oberösterreich bin ich für dich
+            in Linz und Steyr erreichbar. Termine bitte vorher vereinbaren –
+            Beratungen finden ungestört statt.
           </p>
         </div>
 
@@ -52,8 +53,8 @@ export default function Location() {
                 </span>
               </li>
               <li>
-                <span className="k">Weitere</span>
-                <span className="v">Linz · Steyr (auf Anfrage)</span>
+                <span className="k">Oberösterreich</span>
+                <span className="v">Linz · Steyr – Termin nach Vereinbarung</span>
               </li>
             </ul>
 

@@ -16,18 +16,18 @@ const SERVICES = [
   },
   {
     num: "04",
+    title: "Haushaltsoptimierung",
+    desc: "Strom, Gas, Versicherungen, Sparquote. Oft sind ein paar hundert Euro pro Jahr drin, ohne dass sich am Lebensstil etwas ändert.",
+  },
+  {
+    num: "05",
     title: "Finanzierungen",
     desc: "Wohnbau, Immobilie, Sanierung. Konkreter Bankvergleich, realistische Raten – und ehrliche Antworten, ob jetzt der richtige Zeitpunkt ist.",
   },
   {
-    num: "05",
+    num: "06",
     title: "Betriebliche Vorsorge",
     desc: "Speziell für KMU, Lehrer:innen, Beamte und Angestellte im öffentlichen Dienst. Eine vom Staat steuerlich gestützte Form der Vorsorge, die viele liegen lassen.",
-  },
-  {
-    num: "06",
-    title: "Steuer- & Haushaltsoptimierung",
-    desc: "Strom, Gas, Versicherungen, Sparquote. Oft sind ein paar hundert Euro pro Jahr drin, ohne dass sich am Lebensstil etwas ändert.",
   },
 ];
 

@@ -29,7 +29,7 @@ export default function Footer() {
             <h4>Kontakt</h4>
             <ul>
               <li><a href="tel:+436802138014">+43 680 213 80 14</a></li>
-              <li><a href="mailto:office@grossalber.at">office@grossalber.at</a></li>
+              <li><a href="mailto:office@gabriel-grossalber.at">office@gabriel-grossalber.at</a></li>
               <li>Siebenbrunnengasse 17/5</li>
               <li>1050 Wien</li>
             </ul>
