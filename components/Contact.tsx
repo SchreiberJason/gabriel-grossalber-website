@@ -19,20 +19,20 @@ const TOPICS = [
 const TIMES = ["Vormittag", "Nachmittag", "Abend", "Wochenende", "Egal"];
 
 const PHONE_PREFIXES = [
-  { code: "+43", label: "+43 Österreich" },
-  { code: "+49", label: "+49 Deutschland" },
-  { code: "+41", label: "+41 Schweiz" },
-  { code: "+39", label: "+39 Italien" },
-  { code: "+420", label: "+420 Tschechien" },
-  { code: "+421", label: "+421 Slowakei" },
-  { code: "+386", label: "+386 Slowenien" },
-  { code: "+36", label: "+36 Ungarn" },
-  { code: "+423", label: "+423 Liechtenstein" },
-  { code: "+33", label: "+33 Frankreich" },
-  { code: "+32", label: "+32 Belgien" },
-  { code: "+31", label: "+31 Niederlande" },
-  { code: "+44", label: "+44 UK" },
-  { code: "+1", label: "+1 USA / Kanada" },
+  { code: "+43", flag: "🇦🇹" },
+  { code: "+49", flag: "🇩🇪" },
+  { code: "+41", flag: "🇨🇭" },
+  { code: "+39", flag: "🇮🇹" },
+  { code: "+420", flag: "🇨🇿" },
+  { code: "+421", flag: "🇸🇰" },
+  { code: "+386", flag: "🇸🇮" },
+  { code: "+36", flag: "🇭🇺" },
+  { code: "+423", flag: "🇱🇮" },
+  { code: "+33", flag: "🇫🇷" },
+  { code: "+32", flag: "🇧🇪" },
+  { code: "+31", flag: "🇳🇱" },
+  { code: "+44", flag: "🇬🇧" },
+  { code: "+1", flag: "🇺🇸" },
 ];
 
 const BENEFITS = [
@@ -57,6 +57,16 @@ export default function Contact() {
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
+
+    if (topics.length === 0) {
+      setStatus("Bitte wähle mindestens ein Thema aus.");
+      return;
+    }
+    if (!time) {
+      setStatus("Bitte wähle aus, wann ich dich am besten erreiche.");
+      return;
+    }
+
     setSubmitting(true);
     setStatus("Wird gesendet …");
 
@@ -254,7 +264,7 @@ export default function Contact() {
                 >
                   {PHONE_PREFIXES.map((p) => (
                     <option key={p.code} value={p.code}>
-                      {p.label}
+                      {p.flag} {p.code}
                     </option>
                   ))}
                 </select>
@@ -269,7 +279,10 @@ export default function Contact() {
             </div>
 
             <div className="field field-full chip-field">
-              <span className="chip-label">Worum geht’s? Mehrfachauswahl möglich.</span>
+              <span className="chip-label">
+                Worum geht’s? Mehrfachauswahl möglich.
+                <span className="req" aria-hidden="true">*</span>
+              </span>
               <div className="chip-row" role="group" aria-label="Themen">
                 {TOPICS.map((t) => {
                   const active = topics.includes(t);
@@ -289,7 +302,10 @@ export default function Contact() {
             </div>
 
             <div className="field field-full chip-field">
-              <span className="chip-label">Wann erreiche ich dich am besten?</span>
+              <span className="chip-label">
+                Wann erreiche ich dich am besten?
+                <span className="req" aria-hidden="true">*</span>
+              </span>
               <div className="chip-row" role="radiogroup" aria-label="Wunschzeit">
                 {TIMES.map((t) => {
                   const active = time === t;
