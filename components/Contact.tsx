@@ -78,8 +78,11 @@ export default function Contact() {
           method: "POST",
           body: formData,
         });
-        const data = await res.json();
-        if (!data.success) throw new Error("submit-failed");
+        const data = await res.json().catch(() => ({}));
+        if (!data.success) {
+          console.error("Web3Forms error:", res.status, data);
+          throw new Error(data.message || `HTTP ${res.status}`);
+        }
       } else {
         await new Promise((r) => setTimeout(r, 700));
       }
@@ -91,9 +94,10 @@ export default function Contact() {
       setTopics([]);
       setTime("");
       window.hcaptcha?.reset();
-    } catch {
+    } catch (err) {
+      const detail = err instanceof Error ? err.message : "";
       setStatus(
-        "Hat leider nicht geklappt. Bitte direkt per E-Mail an office@gabriel-grossalber.at."
+        `Hat leider nicht geklappt${detail ? ` (${detail})` : ""}. Bitte direkt per E-Mail an office@gabriel-grossalber.at.`
       );
     } finally {
       setSubmitting(false);
