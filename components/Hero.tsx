@@ -72,7 +72,7 @@ export default function Hero() {
 
         <div className="hero-strip reveal" style={delay(180)}>
           <div className="strip-item">
-            <div className="v">3+</div>
+            <div className="v">4+</div>
             <div className="k">Jahre Erfahrung</div>
           </div>
           <div className="strip-item">
