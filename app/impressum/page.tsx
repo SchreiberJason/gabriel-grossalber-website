@@ -294,25 +294,6 @@ export default function ImpressumPage() {
               .
             </p>
             <p>
-              <strong>hCaptcha (Spam-Schutz):</strong> Zum Schutz des
-              Kontaktformulars vor automatisiertem Missbrauch setze ich den
-              Dienst <em>hCaptcha</em> der Intuition Machines, Inc. (USA) ein.
-              Beim Aufruf des Formulars werden Skripte von hCaptcha geladen und
-              Verbindungsdaten (insbesondere IP-Adresse, Browser-Informationen,
-              Mausbewegungen während der Prüfung) an hCaptcha übertragen, um zu
-              prüfen, ob die Anfrage von einem Menschen stammt. Rechtsgrundlage
-              ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der
-              Abwehr von Spam und Bot-Angriffen). Weitere Informationen unter{" "}
-              <a
-                href="https://www.hcaptcha.com/privacy"
-                target="_blank"
-                rel="noreferrer"
-              >
-                hcaptcha.com/privacy
-              </a>
-              .
-            </p>
-            <p>
               <strong>Cookies:</strong> Diese Webseite verwendet Cookies. Sie
               haben beim Betreten der Seite die Möglichkeit, über den
               Cookie-Banner zu entscheiden, welche Cookies Sie zulassen möchten.

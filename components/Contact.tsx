@@ -1,17 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import Script from "next/script";
 import { useState, type FormEvent } from "react";
 
 const WEB3FORMS_ACCESS_KEY = "b263c060-6234-43ee-9cfa-8b7994442a89";
-const HCAPTCHA_SITEKEY = "50b2fe65-b00b-4b9e-ad62-3ba471098be2";
-
-declare global {
-  interface Window {
-    hcaptcha?: { reset: () => void };
-  }
-}
 
 const TOPICS = [
   "Vermögensaufbau / Sparplan",
@@ -58,13 +50,6 @@ export default function Contact() {
     const isConfigured =
       WEB3FORMS_ACCESS_KEY && WEB3FORMS_ACCESS_KEY.length > 20;
 
-    const captchaToken = formData.get("h-captcha-response");
-    if (isConfigured && (!captchaToken || captchaToken === "")) {
-      setStatus("Bitte bestätige kurz, dass du kein Bot bist (Captcha).");
-      setSubmitting(false);
-      return;
-    }
-
     try {
       if (isConfigured) {
         formData.append("access_key", WEB3FORMS_ACCESS_KEY);
@@ -93,7 +78,6 @@ export default function Contact() {
       form.reset();
       setTopics([]);
       setTime("");
-      window.hcaptcha?.reset();
     } catch (err) {
       const detail = err instanceof Error ? err.message : "";
       setStatus(
@@ -106,12 +90,6 @@ export default function Contact() {
 
   return (
     <section className="contact" id="kontakt">
-      <Script
-        src="https://js.hcaptcha.com/1/api.js"
-        strategy="afterInteractive"
-        async
-        defer
-      />
       <div className="container">
         <div className="section-head-big reveal">
           <div>
@@ -296,11 +274,6 @@ export default function Contact() {
                 Kontaktaufnahme zu.
               </span>
             </label>
-
-            <div
-              className="h-captcha"
-              data-sitekey={HCAPTCHA_SITEKEY}
-            />
 
             <div className="form-actions">
               <span
