@@ -8,18 +8,18 @@ const delay = (ms: number) =>
 const CV = [
   {
     year: "2022",
-    title: "Prüfung Vermögensberater",
-    detail: "Spezialisierung Finanzierung & Veranlagung",
+    title: "Prüfung Versicherungsagent",
+    detail: "Fachprüfung noch während der HTL",
   },
   {
     year: "2023",
-    title: "Matura · Gewerbe Vermögensberatung",
-    detail: "Start der eigenständigen Beratung in Steyr & Linz",
+    title: "Matura · Start als Versicherungsagent",
+    detail: "Eigenes Gewerbe, Beratung in Steyr & Linz",
   },
   {
     year: "2024",
-    title: "Gewerbe Versicherungsvermittlung",
-    detail: "Erweiterung um ungebundenen Versicherungs-Marktvergleich",
+    title: "Gewerbe Vermögensberatung",
+    detail: "Erweiterung um Finanzierung & Veranlagung",
   },
   {
     year: "2025",
@@ -60,10 +60,10 @@ export default function About() {
           <div className="about-text reveal" style={delay(120)}>
             <p>
               Mein Weg in die Branche startete schon während der HTL. Noch vor
-              der Matura habe ich 2022 die Prüfung zum Vermögensberater abgelegt
-              und 2023 das eigene Gewerbe angemeldet. 2024 kam die
-              Versicherungsvermittlung dazu. Heute bin ich an drei Standorten
-              tätig: Steyr, Linz – und seit 2025 auch in Wien.
+              der Matura habe ich 2022 die Prüfung zum Versicherungsagenten
+              abgelegt und 2023 – im Jahr der Matura – das eigene Gewerbe
+              angemeldet. 2024 kam die Vermögensberatung dazu. Heute bin ich an
+              drei Standorten tätig: Steyr, Linz – und seit 2025 auch in Wien.
             </p>
             <p className="highlight">
               „Ich habe kein eigenes Produkt. Ich suche das beste vom Markt –
