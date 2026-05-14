@@ -18,6 +18,23 @@ const TOPICS = [
 
 const TIMES = ["Vormittag", "Nachmittag", "Abend", "Wochenende", "Egal"];
 
+const PHONE_PREFIXES = [
+  { code: "+43", label: "+43 Österreich" },
+  { code: "+49", label: "+49 Deutschland" },
+  { code: "+41", label: "+41 Schweiz" },
+  { code: "+39", label: "+39 Italien" },
+  { code: "+420", label: "+420 Tschechien" },
+  { code: "+421", label: "+421 Slowakei" },
+  { code: "+386", label: "+386 Slowenien" },
+  { code: "+36", label: "+36 Ungarn" },
+  { code: "+423", label: "+423 Liechtenstein" },
+  { code: "+33", label: "+33 Frankreich" },
+  { code: "+32", label: "+32 Belgien" },
+  { code: "+31", label: "+31 Niederlande" },
+  { code: "+44", label: "+44 UK" },
+  { code: "+1", label: "+1 USA / Kanada" },
+];
+
 const BENEFITS = [
   "Marktvergleich – ohne Bindung an einen Anbieter",
   "Schriftliche Zusammenfassung nach dem Gespräch",
@@ -46,6 +63,16 @@ export default function Contact() {
     const formData = new FormData(form);
     formData.append("themen", topics.join(", "));
     formData.append("wunschzeit", time);
+
+    const firstName = String(formData.get("firstName") ?? "").trim();
+    const lastName = String(formData.get("lastName") ?? "").trim();
+    formData.set("name", `${firstName} ${lastName}`.trim());
+
+    const phonePrefix = String(formData.get("phonePrefix") ?? "");
+    const phoneNumber = String(formData.get("phoneNumber") ?? "").trim();
+    formData.set("phone", phoneNumber ? `${phonePrefix} ${phoneNumber}` : "");
+    formData.delete("phoneNumber");
+    formData.delete("phonePrefix");
 
     const isConfigured =
       WEB3FORMS_ACCESS_KEY && WEB3FORMS_ACCESS_KEY.length > 20;
@@ -182,17 +209,33 @@ export default function Contact() {
               aria-hidden="true"
             />
             <div className="field">
-              <label htmlFor="v2-name">Name</label>
+              <label htmlFor="v2-firstname">
+                Vorname<span className="req" aria-hidden="true">*</span>
+              </label>
               <input
-                id="v2-name"
-                name="name"
+                id="v2-firstname"
+                name="firstName"
                 type="text"
                 required
-                autoComplete="name"
+                autoComplete="given-name"
               />
             </div>
             <div className="field">
-              <label htmlFor="v2-mail">E-Mail</label>
+              <label htmlFor="v2-lastname">
+                Nachname<span className="req" aria-hidden="true">*</span>
+              </label>
+              <input
+                id="v2-lastname"
+                name="lastName"
+                type="text"
+                required
+                autoComplete="family-name"
+              />
+            </div>
+            <div className="field field-full">
+              <label htmlFor="v2-mail">
+                E-Mail<span className="req" aria-hidden="true">*</span>
+              </label>
               <input
                 id="v2-mail"
                 name="email"
@@ -203,12 +246,26 @@ export default function Contact() {
             </div>
             <div className="field field-full">
               <label htmlFor="v2-phone">Telefon (optional)</label>
-              <input
-                id="v2-phone"
-                name="phone"
-                type="tel"
-                autoComplete="tel"
-              />
+              <div className="phone-input">
+                <select
+                  name="phonePrefix"
+                  defaultValue="+43"
+                  aria-label="Vorwahl"
+                >
+                  {PHONE_PREFIXES.map((p) => (
+                    <option key={p.code} value={p.code}>
+                      {p.label}
+                    </option>
+                  ))}
+                </select>
+                <input
+                  id="v2-phone"
+                  name="phoneNumber"
+                  type="tel"
+                  autoComplete="tel-national"
+                  placeholder="Nummer"
+                />
+              </div>
             </div>
 
             <div className="field field-full chip-field">

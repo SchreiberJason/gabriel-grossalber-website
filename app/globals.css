@@ -953,6 +953,16 @@ html[data-theme="dark"] .location-map iframe {
   color: var(--ink-3);
   font-weight: 500;
 }
+.form .req { color: var(--accent); margin-left: 3px; }
+.form .phone-input {
+  display: grid;
+  grid-template-columns: minmax(140px, 200px) 1fr;
+  gap: 12px;
+  align-items: end;
+}
+@media (max-width: 480px) {
+  .form .phone-input { grid-template-columns: 1fr; gap: 8px; }
+}
 .form input, .form select, .form textarea {
   font: inherit;
   font-size: 15px;
