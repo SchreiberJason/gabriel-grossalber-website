@@ -1,12 +1,17 @@
 "use client";
 
 import Link from "next/link";
+import Script from "next/script";
 import { useState, type FormEvent } from "react";
 
-// Web3Forms Access Key — kostenfreier Schlüssel auf https://web3forms.com
-// erstellen und hier eintragen. Solange der Platzhalter steht, simuliert das
-// Formular eine erfolgreiche Übermittlung, ohne wirklich zu senden.
-const WEB3FORMS_ACCESS_KEY = "REPLACE_WITH_YOUR_ACCESS_KEY";
+const WEB3FORMS_ACCESS_KEY = "b263c060-6234-43ee-9cfa-8b7994442a89";
+const HCAPTCHA_SITEKEY = "50b2fe65-b00b-4b9e-ad62-3ba471098be2";
+
+declare global {
+  interface Window {
+    hcaptcha?: { reset: () => void };
+  }
+}
 
 const TOPICS = [
   "Vermögensaufbau / Sparplan",
@@ -53,10 +58,22 @@ export default function Contact() {
     const isConfigured =
       WEB3FORMS_ACCESS_KEY && WEB3FORMS_ACCESS_KEY.length > 20;
 
+    const captchaToken = formData.get("h-captcha-response");
+    if (isConfigured && (!captchaToken || captchaToken === "")) {
+      setStatus("Bitte bestätige kurz, dass du kein Bot bist (Captcha).");
+      setSubmitting(false);
+      return;
+    }
+
     try {
       if (isConfigured) {
         formData.append("access_key", WEB3FORMS_ACCESS_KEY);
         formData.append("subject", "Neue Anfrage über gabriel-grossalber.at");
+        formData.append("from_name", "gabriel-grossalber.at Kontaktformular");
+        const senderEmail = formData.get("email");
+        if (typeof senderEmail === "string" && senderEmail) {
+          formData.append("replyto", senderEmail);
+        }
         const res = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
           body: formData,
@@ -73,6 +90,7 @@ export default function Contact() {
       form.reset();
       setTopics([]);
       setTime("");
+      window.hcaptcha?.reset();
     } catch {
       setStatus(
         "Hat leider nicht geklappt. Bitte direkt per E-Mail an office@gabriel-grossalber.at."
@@ -84,6 +102,12 @@ export default function Contact() {
 
   return (
     <section className="contact" id="kontakt">
+      <Script
+        src="https://js.hcaptcha.com/1/api.js"
+        strategy="afterInteractive"
+        async
+        defer
+      />
       <div className="container">
         <div className="section-head-big reveal">
           <div>
@@ -167,6 +191,14 @@ export default function Contact() {
           </div>
 
           <form className="form reveal" onSubmit={handleSubmit}>
+            <input
+              type="checkbox"
+              name="botcheck"
+              tabIndex={-1}
+              autoComplete="off"
+              style={{ display: "none" }}
+              aria-hidden="true"
+            />
             <div className="field">
               <label htmlFor="v2-name">Name</label>
               <input
@@ -260,6 +292,11 @@ export default function Contact() {
                 Kontaktaufnahme zu.
               </span>
             </label>
+
+            <div
+              className="h-captcha"
+              data-sitekey={HCAPTCHA_SITEKEY}
+            />
 
             <div className="form-actions">
               <span
