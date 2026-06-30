@@ -21,7 +21,7 @@ export default function Hero() {
               <span className="row">
                 über <em>dein Geld.</em>
               </span>
-              <span className="row sub">Ohne Provisionsdruck.</span>
+              <span className="row sub">Ziele erreichen.</span>
             </h1>
 
             <p className="lead hero-lead">
