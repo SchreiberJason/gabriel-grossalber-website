@@ -43,8 +43,7 @@ export default function Beliefs() {
             </h2>
           </div>
           <p className="desc">
-            Ein paar Sätze, die meine Arbeit zusammenfassen. Nicht als
-            Marketing, sondern als Erinnerung – für mich und für dich.
+            Ein paar Sätze, die meine Arbeit zusammenfassen.
           </p>
         </div>
         <div className="belief-grid reveal">

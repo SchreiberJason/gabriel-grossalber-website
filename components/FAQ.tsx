@@ -38,7 +38,7 @@ export default function FAQ() {
             </h2>
           </div>
           <p className="desc">
-            Die Fragen, die in Erstgesprächen am häufigsten kommen. Wenn deine
+            Fragen, die in Erstgesprächen am häufigsten kommen. Wenn deine
             nicht dabei ist – einfach anrufen oder schreiben.
           </p>
         </div>

@@ -45,7 +45,7 @@ export default function Services() {
           <p className="desc">
             Statt drei verschiedener Ansprechpartner:innen für Versicherung,
             Bank und Vorsorge – einer, der die Zusammenhänge kennt und dafür
-            sorgt, dass alles zusammenpasst.
+            sorgt, dass alles aufeinander abgestimmt ist.
           </p>
         </div>
         <div className="service-list reveal">
